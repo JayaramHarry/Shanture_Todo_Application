@@ -1,0 +1,91 @@
+/* App.css */
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.app {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.logo-container{
+  display: flex;
+  align-items: center;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.task-list {
+  margin-top: 20px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+img{
+  width: 15%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: darken;
+}
+.task.completed {
+  background-color: #e0e0e0;
+  text-decoration: line-through;
+}
+
+.task .task-description {
+  margin-left: 10px;
+  flex: 1;
+}
+
+.delete-icon {
+  cursor: pointer;
+  color: #f44336; /* Material-UI red color */
+}
+
+.delete-icon:hover {
+  color: #b71c1c; /* Darker red on hover */
+}
+
+.add-task-form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.add-task-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+.add-task-button {
+  padding: 10px 20px;
+  background-color: #4caf50; /* Material-UI green color */
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.add-task-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

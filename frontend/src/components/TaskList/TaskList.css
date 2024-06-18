@@ -1,0 +1,13 @@
+.task-list {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.task-list h1 {
+  text-align: center;
+  color: #333;
+}

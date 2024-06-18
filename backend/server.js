@@ -106,7 +106,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // MongoDB Connection
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/todo';
+const mongoURI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/todo';
 mongoose.connect(mongoURI);
 
 const db = mongoose.connection;

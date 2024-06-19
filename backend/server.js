@@ -97,7 +97,7 @@ app.use(bodyParser.json());
 
 // CORS Configuration
 const corsOptions = {
-  origin: 'http://localhost:3000', // Allow requests from this origin
+  origin: 'http://localhost:5000', // Allow requests from this origin
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allow these HTTP methods
   credentials: true, // Allow credentials (cookies, etc.) to be sent
   optionsSuccessStatus: 204 // Some legacy browsers (IE11, various SmartTVs) choke on 204

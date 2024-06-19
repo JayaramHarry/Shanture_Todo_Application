@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // CORS Configuration
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:5000'];
+const allowedOrigins = ['https://shanturetodo.netlify.app', 'https://shanture-todo-application.onrender.com'];
 
 const corsOptions = {
   origin: (origin, callback) => {
@@ -100,4 +100,3 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-

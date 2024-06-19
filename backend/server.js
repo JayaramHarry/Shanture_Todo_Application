@@ -96,11 +96,19 @@ const app = express();
 app.use(bodyParser.json());
 
 // CORS Configuration
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:5000'];
+
 const corsOptions = {
-  origin: 'http://localhost:5000', // Allow requests from this origin
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allow these HTTP methods
-  credentials: true, // Allow credentials (cookies, etc.) to be sent
-  optionsSuccessStatus: 204 // Some legacy browsers (IE11, various SmartTVs) choke on 204
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204
 };
 
 app.use(cors(corsOptions));
@@ -108,11 +116,9 @@ app.use(cors(corsOptions));
 // MongoDB Connection
 const mongoURI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/todo';
 mongoose.connect(mongoURI, {
-useNewUrlParser: true,
-useUnifiedTopology: true,
-ssl: true,
-tlsAllowInvalidCertificates: true,
-})
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -180,3 +186,4 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+

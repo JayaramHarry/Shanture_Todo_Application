@@ -10,13 +10,15 @@ const Task = ({ task, updateTask, deleteTask }) => {
 
   return (
     <div className={`task ${task.completed ? 'completed' : ''}`}>
-      <input
+      <div>
+        <input
         type="checkbox"
         checked={task.completed}
         onChange={handleCheckboxChange}
         readOnly
       />
       <span>{task.description}</span>
+      </div>
       <button onClick={() => deleteTask(task._id)}>
         <DeleteIcon />
       </button>

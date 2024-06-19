@@ -107,7 +107,12 @@ app.use(cors(corsOptions));
 
 // MongoDB Connection
 const mongoURI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/todo';
-mongoose.connect(mongoURI);
+mongoose.connect(mongoURI, {
+useNewUrlParser: true,
+useUnifiedTopology: true,
+ssl: true,
+tlsAllowInvalidCertificates: true,
+})
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
